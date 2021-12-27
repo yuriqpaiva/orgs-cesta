@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, StatusBar, Text, SafeAreaView } from 'react-native';
+import Cesta from './src/screens/Cesta';
+import {
+  useFonts,
+  Montserrat_400Regular,
+  Montserrat_700Bold,
+} from '@expo-google-fonts/montserrat';
 
 export default function App() {
+  const [fonteCarregada] = useFonts({
+    MontserratRegular: Montserrat_400Regular,
+    MontserratBold: Montserrat_700Bold,
+  });
+
+  if (!fonteCarregada) {
+    return <View />;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Alura</Text>
-      <StatusBar style="auto" />
-    </View>
+    // Cria uma margem para o conteúdo ficar abaixo da barra de utilitários (iPhone):
+    <SafeAreaView>
+      {/* Cria uma status bar (Android) */}
+      <StatusBar />
+      <Cesta />
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

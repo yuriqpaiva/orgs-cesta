@@ -4,7 +4,7 @@ Front-end E-commerce with React Native - Expo
 
 Mobile application to learn some important concepts of React Native
 
-<img src='./assets/screen/app-screen.png' style="width:175px;"/>
+<img src='./assets/screen/app-screen.png' style="width:200px;"/>
 
 ## How to install?
 

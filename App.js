@@ -21,7 +21,7 @@ export default function App() {
 
   return (
     // Cria uma margem para o conteúdo ficar abaixo da barra de utilitários (iPhone):
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1 }}>
       {/* Cria uma status bar (Android) */}
       <StatusBar />
       <Cesta {...mock} />

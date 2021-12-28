@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Image, TouchableOpacity } from 'react-native';
+import Botao from '../../../components/Botao';
 
 import Texto from '../../../components/Texto';
 
@@ -20,9 +21,9 @@ export default function Detalhes({
       </View>
       <Texto style={estilos.descricao}>{descricao}</Texto>
       <Texto style={estilos.preco}>{preco}</Texto>
-      <TouchableOpacity style={estilos.botao}>
-        <Texto style={estilos.textoBotao}>{botao}</Texto>
-      </TouchableOpacity>
+      <Botao styles={estilos.botao} onPress={() => console.log('Teste botão')}>
+        {botao}
+      </Botao>
     </>
   );
 }
@@ -61,15 +62,5 @@ const estilos = StyleSheet.create({
   },
   botao: {
     marginTop: 16,
-    backgroundColor: '#2A9F85',
-    paddingVertical: 16,
-    borderRadius: 6,
-  },
-  textoBotao: {
-    textAlign: 'center',
-    color: '#ffff',
-    fontSize: 16,
-    lineHeight: 26,
-    fontWeight: 'bold',
   },
 });
